@@ -1,10 +1,11 @@
 ﻿using System.Diagnostics;
+using RiverRide.CollisionDetection;
 
 namespace RiverRide.Rendering;
 
 public class DefaultRenderEngine : IRenderEngine
 {
-    public async Task Render(RenderingContext context, CancellationToken cancellationToken)
+    public async Task Render(RenderingContext context, ICollisionDetector collisionDetection, CancellationToken cancellationToken)
     {
         Console.CursorVisible = false;
 
@@ -23,6 +24,8 @@ public class DefaultRenderEngine : IRenderEngine
             }
 
             var drawablesToRemove = new List<Drawable>();
+
+            collisionDetection.DetectCollision(context);
 
             foreach (var drawable in context.Drawables)
             {

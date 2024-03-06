@@ -5,7 +5,13 @@ public abstract class Drawable
     public Coordinate Coordinate { get; private set; }
     public abstract char[] Characters { get; }
 
-    public abstract void OnKeyPressed(ConsoleKey key, RenderingContext renderingContext);
+    public virtual void OnKeyPressed(ConsoleKey key, RenderingContext renderingContext)
+    {
+    }
+
+    public virtual void OnCollision(Drawable drawable, RenderingContext renderingContext)
+    {
+    }
 
     public Drawable(RenderingContext renderingContext)
     {

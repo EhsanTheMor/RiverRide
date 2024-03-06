@@ -1,6 +1,8 @@
-﻿namespace RiverRide.Rendering;
+﻿using RiverRide.CollisionDetection;
+
+namespace RiverRide.Rendering;
 
 public interface IRenderEngine
 {
-    Task Render(RenderingContext context, CancellationToken cancellationToken);
+    Task Render(RenderingContext context, ICollisionDetector collisionDetection, CancellationToken cancellationToken);
 }

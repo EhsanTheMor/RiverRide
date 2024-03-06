@@ -12,8 +12,4 @@ public class Bullet : Drawable
     }
 
     public override char[] Characters => new[] { '.' };
-
-    public override void OnKeyPressed(ConsoleKey key, RenderingContext renderingContext)
-    {
-    }
 }
